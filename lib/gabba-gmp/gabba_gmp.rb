@@ -60,9 +60,9 @@ module GabbaGMP
                       tracking_id: ga_tracking_id, 
                       document_host: request.host, 
                       client_id: cookies[client_id_cookie], 
-                      user_ip_address: request.remote_ip, 
+                      user_ip_address: request.ip, 
                       user_agent: request.user_agent,
-                      user_language: preferred_language(request.accept_language)}
+                      user_language: 'en'}
         
       @sessionopts[:document_referrer] = request.referrer if request.referrer and !request.referrer.start_with?("#{request.protocol}#{request.host_with_port}")
         
